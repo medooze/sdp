@@ -1,0 +1,134 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package org.murillo.sdp.impl;
+
+import org.murillo.abnf.Rule$attribute_field;
+import org.murillo.abnf.Rule$mid_attr;
+import org.murillo.abnf.Rule$group_attr;
+import org.murillo.abnf.Rule$ssrc_attr;
+import org.murillo.abnf.Rule$ssrc_group_attr;
+import org.murillo.abnf.Rule$cname_attr;
+import org.murillo.abnf.Rule$previous_ssrc_attr;
+import org.murillo.abnf.Rule$rtpmap_attr;
+import org.murillo.abnf.Rule$attribute;
+import org.murillo.abnf.Rule$fmtp_attr;
+import org.murillo.sdp.Attribute;
+import org.murillo.sdp.BaseAttribute;
+import org.murillo.sdp.CNameAttribute;
+import org.murillo.sdp.GroupAttribute;
+import org.murillo.sdp.MidAttribute;
+import org.murillo.sdp.PreviousSSRCAttribute;
+import org.murillo.sdp.SSRCAttribute;
+import org.murillo.sdp.SSRCGroupAttribute;
+
+/**
+ *
+ * @author Sergio
+ */
+class AttributeBuilder extends Builder {
+
+    private Attribute attr;
+
+    @Override
+    public Object visit(Rule$attribute_field rule) {
+        //Reset
+        attr = null;
+        //Generate
+        super.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$mid_attr rule) {
+        //Get builder
+        MidAttributeBuilder builder = new MidAttributeBuilder();
+        //build it
+        attr = (MidAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$group_attr rule) {
+        //Get builder
+        GroupAttributeBuilder builder = new GroupAttributeBuilder();
+        //build it
+        attr = (GroupAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$ssrc_attr rule) {
+        //Get builder
+        SSRCAttributeBuilder builder = new SSRCAttributeBuilder();
+        //build it
+        attr = (SSRCAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$rtpmap_attr rule) {
+        //Get builder
+        RTPMapAttributeBuilder builder = new RTPMapAttributeBuilder();
+        //build it
+        attr = (SSRCAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$fmtp_attr rule) {
+        //Get builder
+        FormatAttributeBuilder builder = new FormatAttributeBuilder();
+        //build it
+        attr = (SSRCAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$ssrc_group_attr rule) {
+        //Get builder
+        SSRCGroupAttributeBuilder builder = new SSRCGroupAttributeBuilder();
+        //build it
+        attr = (SSRCGroupAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$cname_attr rule) {
+        //Get builder
+        CNameAttributeBuilder builder = new CNameAttributeBuilder();
+        //build it
+        attr = (CNameAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$previous_ssrc_attr rule) {
+        //Get builder
+        PreviousSSRCAttributeBuilder builder = new PreviousSSRCAttributeBuilder();
+        //build it
+        attr = (PreviousSSRCAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$attribute rule) {
+        //Get builder
+        BaseAttributeBuilder builder = new BaseAttributeBuilder();
+        //build it
+        attr = (BaseAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+}
