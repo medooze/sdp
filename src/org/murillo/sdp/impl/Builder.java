@@ -961,4 +961,124 @@ class Builder implements Visitor {
     public Object visit(Rule$uri_key_type rule) {
         return visitRules(rule.rules);
     }
+
+    @Override
+    public Object visit(Rule$number_of_ports rule) {
+         return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$crypto_attribute rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$tag rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$crypto_suite rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$key_params rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$key_param rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$key_method rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$key_method_ext rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$key_info rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$session_param rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$candidate_attribute rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$foundation rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$component_id rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$transport rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$transport_extension rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$priority rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$cand_type rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$candidate_types rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$rel_addr rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$rel_port rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$extension_att rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$extension_att_name rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$extension_att_value rule) {
+        return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$ice_char rule) {
+        return visitRules(rule.rules);
+    }
 }

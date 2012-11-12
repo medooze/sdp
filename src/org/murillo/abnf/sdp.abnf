@@ -32,7 +32,38 @@ zone-adjustments    = %x7a "="  *(SP time SP ["-"] typed-time) CRLF;
 key-field           = %x6b "=" key-type CRLF;
 attribute-fields    = *(attribute-field);
 attribute-field	    = %x61 "="  gen-attribute CRLF;
-gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr /attribute;
+gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr / crypto-attribute / candidate-attribute / attribute;
+candidate-attribute = "candidate" ":" foundation SP component-id SP
+                           transport SP
+                           priority SP
+                           connection-address SP
+                           port         
+                           SP cand-type
+                           [SP rel-addr]
+                           [SP rel-port]
+                           *(SP extension-att);
+foundation          = 1*32ice-char;
+component-id        = 1*5DIGIT ;
+transport           = "UDP" / transport-extension;
+transport-extension = token ;            
+priority            = 1*10DIGIT ;
+cand-type           = "typ" SP candidate-types ;
+candidate-types     = "host" / "srflx" / "prflx" / "relay" / token ;
+rel-addr            = "raddr" SP connection-address ;
+rel-port            = "rport" SP port ;
+extension-att       = extension-att-name SP extension-att-value ;
+extension-att-name  = token ;
+extension-att-value = token ;
+ice-char            = ALPHA / DIGIT / "+" / "/" ;
+crypto-attribute    = "crypto:" tag 1*WSP crypto-suite 1*WSP key-params *(1*WSP session-param);
+tag                 = 1*9DIGIT ;
+crypto-suite        = 1*(ALPHA / DIGIT / "_");
+key-params          = key-param *(";" key-param) ;
+key-param           = key-method ":" key-info ;
+key-method          = "inline" / key-method-ext ;
+key-method-ext      = 1*(ALPHA / DIGIT / "_") ;
+key-info            = 1*(%x21-3A / %x3C-7E) ; 
+session-param       = 1*(VCHAR); 
 mid-attr            = "mid:" identification-tag;
 identification-tag  = token;
 group-attr          = "group:" group-semantics *(SP identification-tag);
@@ -45,7 +76,7 @@ cname-attr          = "cname:" cname ;
 cname               = byte-string;
 previous-ssrc-attr  = "previous-ssrc:" ssrc-id *(SP ssrc-id);
 rtpmap-attr         = "rtpmap:" fmt SP name "/" rate ["/" parameters];
-name                = word ;
+name                = token ;
 rate                = integer ;
 parameters          = token ;
 fmtp-attr           = "fmtp:" fmt SP param-list;
@@ -57,7 +88,7 @@ media-description   =  media-field
 		       bandwidth-fields
 		       [key-field]
 		       attribute-fields;
-media-field         = %x6d "=" media SP port ["/" integer] SP proto 1*(SP fmt) CRLF;
+media-field         = %x6d "=" media SP port ["/" number-of-ports] SP proto 1*(SP fmt) CRLF;
 username            = non-ws-string ;
 sess-id             = 1*DIGIT;
 sess-version        = 1*DIGIT;
@@ -94,6 +125,7 @@ media               = token;
 fmt                 = token;
 proto               = token *("/" token);
 port                = 1*DIGIT;
+number-of-ports     = integer;
 IP4-multicast       = m1 3( "." decimal-uchar ) "/" ttl [ "/" integer ];
 m1                  = ("22" ("4"/"5"/"6"/"7"/"8"/"9")) / ("23" DIGIT );
 IP6-multicast       = hexpart [ "/" integer ];
@@ -157,7 +189,7 @@ dcontent            = dtext / quoted-pair ;
 dtext               = NO-WS-CTL / %d33-90 / %d94-126 ;
 NO-WS-CTL           = %d1-8 / %d11 / %d12 / %d14-31 / %d127;
 quoted-pair         = ("\" text) / obs-qp ;
-text                = %d1-9 / %d11 / %d12 / %d14-127 / obs-text ;
+text                = byte-string;
 FWS                 = ([*WSP CRLF] 1*WSP) / obs-FWS;
 
 comment             = "(" *([FWS] ccontent) [FWS] ")";

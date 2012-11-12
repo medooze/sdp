@@ -69,17 +69,19 @@ public class SessionDescription {
     private ArrayList<String> emails;
     private ArrayList<String> phones;
     private Connection connection;
-    private ArrayList<Bandwitdh> bandwidths;
+    private ArrayList<Bandwidth> bandwidths;
     private ArrayList<Attribute> attributes;
     private Key key;
     private ArrayList<Time> times;
     private ArrayList<MediaDescription> medias;
 
     public SessionDescription() {
+        //Set version
+        version = 0;
         //Create arrays
         emails = new ArrayList<String>();
         phones = new ArrayList<String>();
-        bandwidths = new ArrayList<Bandwitdh>();
+        bandwidths = new ArrayList<Bandwidth>();
         attributes = new ArrayList<Attribute>();
         times = new ArrayList<Time>();
         medias = new ArrayList<MediaDescription>();
@@ -109,6 +111,17 @@ public class SessionDescription {
 
     public ArrayList<Attribute> getAttributes() {
         return attributes;
+    }
+    
+    public Attribute getAttribute(String key) {
+        //For each attribute
+        for (Attribute attr : attributes )
+            //Check if the one searhced
+            if (attr.getField().equalsIgnoreCase(key))
+                //Found
+                return attr;
+        //Not found
+        return null;
     }
 
     public void setAttributes(ArrayList<Attribute> attributes) {
@@ -174,6 +187,10 @@ public class SessionDescription {
     public SessionName getSessionName() {
         return sessionName;
     }
+    
+    public void setSessionName(String sessionName) {
+        this.sessionName = new SessionName(sessionName);
+    }
 
     public void setSessionName(SessionName sessionName) {
         this.sessionName = sessionName;
@@ -211,7 +228,7 @@ public class SessionDescription {
         emails.add(email);
     }
 
-    public void addBandwidth(Bandwitdh bandwith) {
+    public void addBandwidth(Bandwidth bandwith) {
         bandwidths.add(bandwith);
     }
 
@@ -227,6 +244,29 @@ public class SessionDescription {
         attributes.add(attr);
     }
 
+    public ArrayList<Bandwidth> getBandwidths() {
+        return bandwidths;
+    }
+
+    public void setOrigin(String username, String sessId, String sessVersion, String nettype, String addrtype, String address) {
+        setOrigin(new Origin(username, sessId, sessVersion, nettype, addrtype, address));
+    }
+
+    public void setConnection(String netType, String addrType, String address) {
+        setConnection(new Connection(netType, addrType, address));
+    }
+
+    public void addTime(int start, int stop) {
+        addTime( new Time(start, stop));
+    }
+
+    public void addAttribute(String attr) {
+        addAttribute( new BaseAttribute(attr,null));
+    }
+
+    public void addAttribute(String attr, String value) {
+        addAttribute( new BaseAttribute(attr,value));
+    }
 
 }
 

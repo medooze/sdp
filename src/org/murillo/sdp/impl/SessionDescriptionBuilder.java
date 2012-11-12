@@ -22,7 +22,7 @@ import org.murillo.abnf.Rule$email_field;
 import org.murillo.abnf.Rule$uri_field;
 import org.murillo.abnf.Rule$DIGIT;
 import org.murillo.sdp.Attribute;
-import org.murillo.sdp.Bandwitdh;
+import org.murillo.sdp.Bandwidth;
 import org.murillo.sdp.Connection;
 import org.murillo.sdp.Information;
 import org.murillo.sdp.Key;
@@ -162,7 +162,7 @@ public class SessionDescriptionBuilder  extends Builder {
         //Create builder
         BandwitdhBuilder builder = new BandwitdhBuilder();
         //Generate it
-        Bandwitdh bandwith = (Bandwitdh)builder.visit(rule);
+        Bandwidth bandwith = (Bandwidth)builder.visit(rule);
         //Add it
         sdp.addBandwidth(bandwith);
         //Return it

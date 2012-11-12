@@ -7,6 +7,7 @@ package org.murillo.sdp.impl;
 
 import org.murillo.sdp.SSRCAttribute;
 import org.murillo.abnf.Rule$ssrc_attr;
+import org.murillo.abnf.Rule$ssrc_id;
 import org.murillo.abnf.Rule$att_field;
 import org.murillo.abnf.Rule$att_value;
 /**
@@ -27,6 +28,16 @@ class SSRCAttributeBuilder extends Builder {
         return ssrc;
     }
 
+    @Override
+    public Object visit(Rule$ssrc_id rule) {
+        //Get type
+        String ssrcId = rule.toString();
+        //Set type
+        ssrc.setSSRC(ssrcId);
+        //Return it
+        return ssrcId;
+    }
+    
     @Override
     public Object visit(Rule$att_field rule) {
         //Get type

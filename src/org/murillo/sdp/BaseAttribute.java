@@ -17,6 +17,10 @@ public class BaseAttribute implements Attribute {
 
     }
 
+    public BaseAttribute(String field) {
+        this.field = field;
+    }
+
     public BaseAttribute(String field, String value) {
         this.field = field;
         this.value = value;

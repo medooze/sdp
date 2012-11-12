@@ -15,12 +15,18 @@ import org.murillo.abnf.Rule$previous_ssrc_attr;
 import org.murillo.abnf.Rule$rtpmap_attr;
 import org.murillo.abnf.Rule$attribute;
 import org.murillo.abnf.Rule$fmtp_attr;
+import org.murillo.abnf.Rule$crypto_attribute;
+import org.murillo.abnf.Rule$candidate_attribute;
 import org.murillo.sdp.Attribute;
 import org.murillo.sdp.BaseAttribute;
 import org.murillo.sdp.CNameAttribute;
+import org.murillo.sdp.CandidateAttribute;
+import org.murillo.sdp.CryptoAttribute;
+import org.murillo.sdp.FormatAttribute;
 import org.murillo.sdp.GroupAttribute;
 import org.murillo.sdp.MidAttribute;
 import org.murillo.sdp.PreviousSSRCAttribute;
+import org.murillo.sdp.RTPMapAttribute;
 import org.murillo.sdp.SSRCAttribute;
 import org.murillo.sdp.SSRCGroupAttribute;
 
@@ -77,7 +83,7 @@ class AttributeBuilder extends Builder {
         //Get builder
         RTPMapAttributeBuilder builder = new RTPMapAttributeBuilder();
         //build it
-        attr = (SSRCAttribute)builder.visit(rule);
+        attr = (RTPMapAttribute)builder.visit(rule);
         //Return it
         return attr;
     }
@@ -87,7 +93,7 @@ class AttributeBuilder extends Builder {
         //Get builder
         FormatAttributeBuilder builder = new FormatAttributeBuilder();
         //build it
-        attr = (SSRCAttribute)builder.visit(rule);
+        attr = (FormatAttribute)builder.visit(rule);
         //Return it
         return attr;
     }
@@ -128,6 +134,26 @@ class AttributeBuilder extends Builder {
         BaseAttributeBuilder builder = new BaseAttributeBuilder();
         //build it
         attr = (BaseAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$crypto_attribute rule) {
+        //Get builder
+        CryptoAttributeBuilder builder = new CryptoAttributeBuilder();
+        //build it
+        attr = (CryptoAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+
+    @Override
+    public Object visit(Rule$candidate_attribute rule) {
+        //Get builder
+        CandidateAttributeBuilder builder = new CandidateAttributeBuilder();
+        //build it
+        attr = (CandidateAttribute)builder.visit(rule);
         //Return it
         return attr;
     }
