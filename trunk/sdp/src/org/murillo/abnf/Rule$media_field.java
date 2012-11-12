@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Aug 20 21:04:46 CEST 2012
+ * Produced : Tue Nov 06 13:31:56 CET 2012
  *
  * -----------------------------------------------------------------------------
  */
@@ -150,7 +150,7 @@ final public class Rule$media_field extends Rule
                   int c2 = 0;
                   for (int i2 = 0; i2 < 1 && f2; i2++)
                   {
-                    rule = Rule$integer.parse(context);
+                    rule = Rule$number_of_ports.parse(context);
                     if ((f2 = rule != null))
                     {
                       e2.add(rule);

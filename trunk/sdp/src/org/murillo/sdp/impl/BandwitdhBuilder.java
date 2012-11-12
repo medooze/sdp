@@ -4,7 +4,7 @@
  */
 
 package org.murillo.sdp.impl;
-import  org.murillo.sdp.Bandwitdh;
+import  org.murillo.sdp.Bandwidth;
 import  org.murillo.abnf.Rule$bandwidth;
 import  org.murillo.abnf.Rule$bandwidth_field;
 import  org.murillo.abnf.Rule$bwtype;
@@ -15,12 +15,12 @@ import  org.murillo.abnf.Rule$bwtype;
  */
 class BandwitdhBuilder extends Builder {
 
-    private Bandwitdh bandwidth;
+    private Bandwidth bandwidth;
 
     @Override
     public Object visit(Rule$bandwidth_field rule) {
         //Create object
-        bandwidth = new Bandwitdh();
+        bandwidth = new Bandwidth();
         //Generate
         visitRules(rule.rules);
         //Return it

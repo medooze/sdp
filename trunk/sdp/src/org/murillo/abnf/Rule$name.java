@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Aug 20 21:04:46 CEST 2012
+ * Produced : Tue Nov 06 13:31:56 CET 2012
  *
  * -----------------------------------------------------------------------------
  */
@@ -46,7 +46,7 @@ final public class Rule$name extends Rule
           int c1 = 0;
           for (int i1 = 0; i1 < 1 && f1; i1++)
           {
-            rule = Rule$word.parse(context);
+            rule = Rule$token.parse(context);
             if ((f1 = rule != null))
             {
               e1.add(rule);

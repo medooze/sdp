@@ -6,6 +6,7 @@
 package org.murillo.sdp;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -16,26 +17,27 @@ public class MediaDescription {
 
     private String media;
     private Integer port;
+    private Integer numberOfPorts;
     private ArrayList<String> proto;
-    private ArrayList<Integer> formats;
+    private ArrayList<String> formats;
     private Information information;
     private ArrayList<Connection> connections;
-    private ArrayList<Bandwitdh> bandwitdhs;
+    private ArrayList<Bandwidth> bandwidths;
     private ArrayList<Attribute> attributes;
     private Key key;
 
     public MediaDescription() {
         //Create arrays
         proto = new ArrayList<String>();
-        formats = new ArrayList<Integer>();
+        formats = new ArrayList<String>();
         connections = new ArrayList<Connection>();
-        bandwitdhs = new ArrayList<Bandwitdh>();
+        bandwidths = new ArrayList<Bandwidth>();
         attributes = new ArrayList<Attribute>();
     }
 
     public MediaDescription(String media, Integer port, String proto) {
         //initialize
-        super();
+        this();
         //Set
         this.media = media;
         this.port = port;
@@ -50,7 +52,10 @@ public class MediaDescription {
     public String toString() {
         //Create media line
         String value ="m=" + media + " " + port;
-        boolean first = false;
+        if (numberOfPorts!=null)
+            value += "/"+numberOfPorts;
+        value +=" ";
+        boolean first = true;
         for (String p : proto)
         {
             if (!first)
@@ -59,7 +64,7 @@ public class MediaDescription {
                 first = false;
             value += p;
         }
-        for (Integer f : formats)
+        for (String f : formats)
             value += " " + f;
         value += "\r\n";
         //Rest of lines of media
@@ -67,7 +72,7 @@ public class MediaDescription {
             value += information;
         for (Connection c : connections)
             value += c;
-        for (Bandwitdh b : bandwitdhs)
+        for (Bandwidth b : bandwidths)
             value += b;
         if (key!=null)
             value += key;
@@ -80,18 +85,29 @@ public class MediaDescription {
         return attributes;
     }
 
-    public ArrayList<Bandwitdh> getBandwitdhs() {
-        return bandwitdhs;
+    public ArrayList<Bandwidth> getBandwidths() {
+        return bandwidths;
     }
 
     public ArrayList<Connection> getConnections() {
         return connections;
     }
 
-    public ArrayList<Integer> getFormats() {
+    public ArrayList<String> getFormats() {
         return formats;
     }
 
+    public String getFormatString() {
+        String value = "";
+        for (String f : formats)
+        {
+            if (value.isEmpty())
+                value += f;
+            else
+                value += " " + f;
+        }
+        return value;
+    }
     public Information getInformation() {
         return information;
     }
@@ -112,15 +128,28 @@ public class MediaDescription {
         return proto;
     }
 
-    public void addFormat(Integer fmt) {
+
+    public void addFormat(String fmt) {
         formats.add(fmt);
     }
+
+    public void addFormat(Integer fmt) {
+        formats.add(fmt.toString());
+    }
+
+    public void setFormats(List<String> formats) {
+        //Clean formas
+        formats.clear();
+        //Add all formats
+        formats.addAll(formats);
+    }
+
     public void addAttribute(Attribute attr) {
         attributes.add(attr);
     }
 
-    public void addBandwidth(Bandwitdh bandwidth) {
-        bandwitdhs.add(bandwidth);
+    public void addBandwidth(Bandwidth bandwidth) {
+        bandwidths.add(bandwidth);
     }
 
     public void addConnection(Connection connection) {
@@ -182,7 +211,8 @@ public class MediaDescription {
 
     public RTPMapAttribute getRTPMap(int fmt) {
         //For each attribute
-        for (Attribute attr : attributes ) {
+        for (Attribute attr : attributes )
+        {
             //Check if it is a format attribute
             if (attr instanceof RTPMapAttribute)
             {
@@ -195,5 +225,53 @@ public class MediaDescription {
             }
         }
         return null;
+    }
+
+    public Attribute getAttribute(String key) {
+        //For each attribute
+        for (Attribute attr : attributes )
+            //Check if the one searhced
+            if (attr.getField().equalsIgnoreCase(key))
+                //Found
+                return attr;
+        //Not found
+        return null;
+    }
+
+    public void addBandwidth(String type, Integer bandwidth) {
+        addBandwidth(new Bandwidth(type,bandwidth));
+    }
+
+    public void addBandwidth(String type, String bandwidth) {
+        addBandwidth(new Bandwidth(type,bandwidth));
+    }
+
+    public void addAttribute(String field) {
+        //Add attribute
+        addAttribute(new BaseAttribute(field));
+    }
+
+    public void addAttribute(String field, String value) {
+        //Add attribute
+        addAttribute(new BaseAttribute(field,value));
+    }
+
+    public void addRTPMapAttribute(Integer format, String name, int rate) {
+        addAttribute( new RTPMapAttribute(format, name, rate));
+    }
+
+    public void addFormatAttribute(Integer format, String parameters) {
+        addAttribute(new FormatAttribute(format,parameters));
+    }
+
+    public void addCandidate(String fundation, Integer componentId, String transport, Integer priority, String address, Integer port, String type) {
+        addAttribute(new CandidateAttribute(fundation, componentId, transport, priority, address, port, type));
+    }
+    public void setNumberOfPorts(Integer number) {
+        numberOfPorts = number;
+    }
+
+    public Integer getNumberOfPorts() {
+        return numberOfPorts;
     }
 }

@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Aug 20 21:04:46 CEST 2012
+ * Produced : Tue Nov 06 13:31:56 CET 2012
  *
  * -----------------------------------------------------------------------------
  */
@@ -276,6 +276,282 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</gen-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$candidate_attribute rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<candidate-attribute>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</candidate-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$foundation rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<foundation>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</foundation>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$component_id rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<component-id>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</component-id>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$transport rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<transport>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</transport>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$transport_extension rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<transport-extension>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</transport-extension>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$priority rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<priority>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</priority>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$cand_type rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<cand-type>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</cand-type>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$candidate_types rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<candidate-types>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</candidate-types>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$rel_addr rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<rel-addr>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</rel-addr>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$rel_port rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<rel-port>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</rel-port>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extension_att rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extension-att>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extension-att>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extension_att_name rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extension-att-name>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extension-att-name>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extension_att_value rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extension-att-value>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extension-att-value>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$ice_char rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<ice-char>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</ice-char>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$crypto_attribute rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<crypto-attribute>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</crypto-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$tag rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<tag>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</tag>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$crypto_suite rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<crypto-suite>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</crypto-suite>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$key_params rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<key-params>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</key-params>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$key_param rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<key-param>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</key-param>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$key_method rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<key-method>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</key-method>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$key_method_ext rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<key-method-ext>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</key-method-ext>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$key_info rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<key-info>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</key-info>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$session_param rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<session-param>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</session-param>");
     terminal = false;
     return null;
   }
@@ -948,6 +1224,18 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</port>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$number_of_ports rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<number-of-ports>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</number-of-ports>");
     terminal = false;
     return null;
   }

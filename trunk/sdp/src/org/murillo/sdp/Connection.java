@@ -26,7 +26,7 @@ public class Connection {
 
     @Override
     public String toString() {
-        return "o=" + netType + " " + addrType + " " + address + "\r\n";
+        return "c=" + netType + " " + addrType + " " + address + "\r\n";
     }
 
     public String getAddrType() {

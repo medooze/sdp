@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Aug 20 21:04:46 CEST 2012
+ * Produced : Tue Nov 06 13:31:56 CET 2012
  *
  * -----------------------------------------------------------------------------
  */
@@ -182,6 +182,29 @@ public class Parser
     else if (rulename.equalsIgnoreCase("attribute-fields")) rule = Rule$attribute_fields.parse(context);
     else if (rulename.equalsIgnoreCase("attribute-field")) rule = Rule$attribute_field.parse(context);
     else if (rulename.equalsIgnoreCase("gen-attribute")) rule = Rule$gen_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("candidate-attribute")) rule = Rule$candidate_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("foundation")) rule = Rule$foundation.parse(context);
+    else if (rulename.equalsIgnoreCase("component-id")) rule = Rule$component_id.parse(context);
+    else if (rulename.equalsIgnoreCase("transport")) rule = Rule$transport.parse(context);
+    else if (rulename.equalsIgnoreCase("transport-extension")) rule = Rule$transport_extension.parse(context);
+    else if (rulename.equalsIgnoreCase("priority")) rule = Rule$priority.parse(context);
+    else if (rulename.equalsIgnoreCase("cand-type")) rule = Rule$cand_type.parse(context);
+    else if (rulename.equalsIgnoreCase("candidate-types")) rule = Rule$candidate_types.parse(context);
+    else if (rulename.equalsIgnoreCase("rel-addr")) rule = Rule$rel_addr.parse(context);
+    else if (rulename.equalsIgnoreCase("rel-port")) rule = Rule$rel_port.parse(context);
+    else if (rulename.equalsIgnoreCase("extension-att")) rule = Rule$extension_att.parse(context);
+    else if (rulename.equalsIgnoreCase("extension-att-name")) rule = Rule$extension_att_name.parse(context);
+    else if (rulename.equalsIgnoreCase("extension-att-value")) rule = Rule$extension_att_value.parse(context);
+    else if (rulename.equalsIgnoreCase("ice-char")) rule = Rule$ice_char.parse(context);
+    else if (rulename.equalsIgnoreCase("crypto-attribute")) rule = Rule$crypto_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("tag")) rule = Rule$tag.parse(context);
+    else if (rulename.equalsIgnoreCase("crypto-suite")) rule = Rule$crypto_suite.parse(context);
+    else if (rulename.equalsIgnoreCase("key-params")) rule = Rule$key_params.parse(context);
+    else if (rulename.equalsIgnoreCase("key-param")) rule = Rule$key_param.parse(context);
+    else if (rulename.equalsIgnoreCase("key-method")) rule = Rule$key_method.parse(context);
+    else if (rulename.equalsIgnoreCase("key-method-ext")) rule = Rule$key_method_ext.parse(context);
+    else if (rulename.equalsIgnoreCase("key-info")) rule = Rule$key_info.parse(context);
+    else if (rulename.equalsIgnoreCase("session-param")) rule = Rule$session_param.parse(context);
     else if (rulename.equalsIgnoreCase("mid-attr")) rule = Rule$mid_attr.parse(context);
     else if (rulename.equalsIgnoreCase("identification-tag")) rule = Rule$identification_tag.parse(context);
     else if (rulename.equalsIgnoreCase("group-attr")) rule = Rule$group_attr.parse(context);
@@ -238,6 +261,7 @@ public class Parser
     else if (rulename.equalsIgnoreCase("fmt")) rule = Rule$fmt.parse(context);
     else if (rulename.equalsIgnoreCase("proto")) rule = Rule$proto.parse(context);
     else if (rulename.equalsIgnoreCase("port")) rule = Rule$port.parse(context);
+    else if (rulename.equalsIgnoreCase("number-of-ports")) rule = Rule$number_of_ports.parse(context);
     else if (rulename.equalsIgnoreCase("IP4-multicast")) rule = Rule$IP4_multicast.parse(context);
     else if (rulename.equalsIgnoreCase("m1")) rule = Rule$m1.parse(context);
     else if (rulename.equalsIgnoreCase("IP6-multicast")) rule = Rule$IP6_multicast.parse(context);
