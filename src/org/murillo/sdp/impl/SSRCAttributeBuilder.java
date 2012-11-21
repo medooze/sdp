@@ -31,7 +31,7 @@ class SSRCAttributeBuilder extends Builder {
     @Override
     public Object visit(Rule$ssrc_id rule) {
         //Get type
-        String ssrcId = rule.toString();
+        Long ssrcId = Long.parseLong(rule.toString());
         //Set type
         ssrc.setSSRC(ssrcId);
         //Return it

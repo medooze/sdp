@@ -11,14 +11,14 @@ package org.murillo.sdp;
  */
 public class SSRCAttribute implements Attribute {
 
-    private String SSRC;
+    private Long SSRC;
     private String attrField;
     private String attrValue;
 
     public SSRCAttribute() {
     }
 
-    public SSRCAttribute(String SSRC, String attrField, String attrValue) {
+    public SSRCAttribute(Long SSRC, String attrField, String attrValue) {
         this.SSRC = SSRC;
         this.attrField = attrField;
         this.attrValue = attrValue;
@@ -42,11 +42,11 @@ public class SSRCAttribute implements Attribute {
         return SSRC + " " + attrField + (attrValue!=null ? ":" + attrValue: "");
     }
 
-    public String getSSRC() {
+    public Long getSSRC() {
         return SSRC;
     }
 
-    public void setSSRC(String SSRC) {
+    public void setSSRC(Long SSRC) {
         this.SSRC = SSRC;
     }
 
