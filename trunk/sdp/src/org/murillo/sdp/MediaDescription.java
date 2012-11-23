@@ -274,4 +274,15 @@ public class MediaDescription {
     public Integer getNumberOfPorts() {
         return numberOfPorts;
     }
+
+    public boolean hasAttribute(String key) {
+        //For each attribute
+        for (Attribute attr : attributes )
+            //Check if the one searhced
+            if (attr.getField().equalsIgnoreCase(key))
+                //Found
+                return true;
+        //Not found
+        return false;
+    }
 }
