@@ -39,8 +39,8 @@ candidate-attribute = "candidate" ":" foundation SP component-id SP
                            connection-address SP
                            port         
                            SP cand-type
-                           [SP rel-addr]
-                           [SP rel-port]
+                           [SP "raddr" SP rel-addr]
+                           [SP "rport" SP rel-port]
                            *(SP extension-att);
 foundation          = 1*32ice-char;
 component-id        = 1*5DIGIT ;
@@ -49,8 +49,8 @@ transport-extension = token ;
 priority            = 1*10DIGIT ;
 cand-type           = "typ" SP candidate-types ;
 candidate-types     = "host" / "srflx" / "prflx" / "relay" / token ;
-rel-addr            = "raddr" SP connection-address ;
-rel-port            = "rport" SP port ;
+rel-addr            =  connection-address;
+rel-port            =  port;
 extension-att       = extension-att-name SP extension-att-value ;
 extension-att-name  = token ;
 extension-att-value = token ;
