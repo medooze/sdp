@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Nov 06 13:31:56 CET 2012
+ * Produced : Thu Jan 17 00:30:49 CET 2013
  *
  * -----------------------------------------------------------------------------
  */
@@ -16,7 +16,7 @@ import java.util.Stack;
  * <p>Signals that a parse failure has occurred.</p>
  * 
  * <p>Producer : com.parse2.aparse.Parser 2.2<br/>
- * Produced : Tue Nov 06 13:31:56 CET 2012</p>
+ * Produced : Thu Jan 17 00:30:49 CET 2013</p>
  */
 
 public class ParserException extends Exception

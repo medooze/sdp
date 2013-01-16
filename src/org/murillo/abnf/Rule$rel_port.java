@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Nov 06 13:31:56 CET 2012
+ * Produced : Thu Jan 17 00:30:49 CET 2013
  *
  * -----------------------------------------------------------------------------
  */
@@ -40,36 +40,6 @@ final public class Rule$rel_port extends Rule
         ArrayList<Rule> e1 = new ArrayList<Rule>();
         int s1 = context.index;
         parsed = true;
-        if (parsed)
-        {
-          boolean f1 = true;
-          int c1 = 0;
-          for (int i1 = 0; i1 < 1 && f1; i1++)
-          {
-            rule = Terminal$StringValue.parse(context, "rport");
-            if ((f1 = rule != null))
-            {
-              e1.add(rule);
-              c1++;
-            }
-          }
-          parsed = c1 == 1;
-        }
-        if (parsed)
-        {
-          boolean f1 = true;
-          int c1 = 0;
-          for (int i1 = 0; i1 < 1 && f1; i1++)
-          {
-            rule = Rule$SP.parse(context);
-            if ((f1 = rule != null))
-            {
-              e1.add(rule);
-              c1++;
-            }
-          }
-          parsed = c1 == 1;
-        }
         if (parsed)
         {
           boolean f1 = true;
