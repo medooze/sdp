@@ -17,6 +17,11 @@ import org.murillo.sdp.impl.SessionDescriptionBuilder;
  */
 public class SessionDescription {
 
+    static public SessionDescription Parse(byte[] body) throws IllegalArgumentException, ParserException
+    {
+        return Parse(new String(body));
+    }
+    
     static public SessionDescription Parse(String string) throws IllegalArgumentException, ParserException
     {
        ParserContext context = new ParserContext(string, false);

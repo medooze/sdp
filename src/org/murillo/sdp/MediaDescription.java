@@ -260,6 +260,10 @@ public class MediaDescription {
         addAttribute( new RTPMapAttribute(format, name, rate));
     }
 
+    public void addRTPMapAttribute(Integer format, String name, int rate, String parameters) {
+        addAttribute( new RTPMapAttribute(format, name, rate, parameters));
+    }
+
     public void addFormatAttribute(Integer format, String parameters) {
         addAttribute(new FormatAttribute(format,parameters));
     }
