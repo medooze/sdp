@@ -55,5 +55,14 @@ public class FormatAttribute implements Attribute {
     public void setParameters(String parameters) {
         this.parameters = parameters;
     }
-    
+
+    public void addParameter(String parameter) {
+        //Check if no parameters
+        if (parameters!=null && !parameters.isEmpty())
+            //append separator
+            parameters += ";" + parameter;
+        else
+            //Set it
+            parameters = parameter;
+    }
 }
