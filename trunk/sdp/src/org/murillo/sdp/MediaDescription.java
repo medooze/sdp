@@ -289,4 +289,9 @@ public class MediaDescription {
         //Not found
         return false;
     }
+
+    public void removeAttribute(Attribute attr){
+        //remove attribute
+        attributes.remove(attr);
+    }
 }
