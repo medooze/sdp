@@ -34,8 +34,6 @@ public class CandidateAttribute implements Attribute {
         public void setValue(String value) {
             this.value = value;
         }
-
-
     }
 
     private String fundation;

@@ -16,6 +16,8 @@ import org.murillo.abnf.Rule$rel_port;
 import org.murillo.abnf.Rule$extension_att;
 import org.murillo.abnf.Rule$extension_att_name;
 import org.murillo.abnf.Rule$extension_att_value;
+import org.murillo.abnf.Rule$connection_address;
+import org.murillo.abnf.Rule$port;
 
 import org.murillo.sdp.CandidateAttribute;
 /**
@@ -73,6 +75,26 @@ class CandidateAttributeBuilder extends Builder {
         Integer value = Integer.parseInt(rule.toString());
         //Set type
         candidate.setPriority(value);
+        //Return it
+        return value;
+    }
+    
+    @Override
+    public Object visit(Rule$connection_address rule) {
+        //Get value
+        String value = rule.toString();
+        //Set type
+        candidate.setAddress(value);
+        //Return it
+        return value;
+    }
+
+    @Override
+    public Object visit(Rule$port rule) {
+         //Get type
+        Integer value = Integer.parseInt(rule.toString());
+        //Set type
+        candidate.setPort(value);
         //Return it
         return value;
     }
