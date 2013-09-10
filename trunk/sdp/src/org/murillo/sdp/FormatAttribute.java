@@ -17,6 +17,11 @@ public class FormatAttribute implements Attribute {
     public FormatAttribute() {
     }
 
+    public FormatAttribute(Integer fmt) {
+        this.fmt = fmt;
+        this.parameters = null;
+    }
+
     public FormatAttribute(Integer fmt, String parameters) {
         this.fmt = fmt;
         this.parameters = parameters;
@@ -60,9 +65,15 @@ public class FormatAttribute implements Attribute {
         //Check if no parameters
         if (parameters!=null && !parameters.isEmpty())
             //append separator
-            parameters += ";" + parameter;
+            parameters += "; " + parameter;
         else
             //Set it
             parameters = parameter;
+    }
+    public void addParameter(String key,String val) {
+        addParameter(key+"="+val);
+    }
+    public void addParameter(String key,Integer val) {
+        addParameter(key,val.toString());
     }
 }

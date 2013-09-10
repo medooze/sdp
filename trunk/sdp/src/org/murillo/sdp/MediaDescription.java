@@ -139,9 +139,9 @@ public class MediaDescription {
 
     public void setFormats(List<String> formats) {
         //Clean formas
-        formats.clear();
+        this.formats.clear();
         //Add all formats
-        formats.addAll(formats);
+        this.formats.addAll(formats);
     }
 
     public void addAttribute(Attribute attr) {
