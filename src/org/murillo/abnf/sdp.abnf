@@ -23,7 +23,7 @@ phone-fields        = *(phone-field);
 phone-field         = %x70 "=" phone-number CRLF;
 connection-field    = %x63 "=" nettype SP addrtype SP connection-address CRLF;
 bandwidth-fields    = *(bandwidth-field);
-bandwidth-field      = %x62 "=" bwtype ":" bandwidth CRLF;
+bandwidth-field     = %x62 "=" bwtype ":" bandwidth CRLF;
 time-fields         = 1*(time-repeat-field) ;
 time-repeat-field   = time-field *(repeat-field);
 time-field          = %x74 "=" start-time SP stop-time CRLF;
@@ -32,7 +32,15 @@ zone-adjustments    = %x7a "="  *(SP time SP ["-"] typed-time) CRLF;
 key-field           = %x6b "=" key-type CRLF;
 attribute-fields    = *(attribute-field);
 attribute-field	    = %x61 "="  gen-attribute CRLF;
-gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr / crypto-attribute / candidate-attribute / attribute;
+gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr / crypto-attribute / candidate-attribute / extmap-attribute / fingerprint-attribute / attribute;
+fingerprint-attribute  =  "fingerprint" ":" hash-func SP fingerprint;
+hash-func           = "sha-1" / "sha-224" / "sha-256" / "sha-384" / "sha-512" / "md5" / "md2" / token ;
+fingerprint         = 2HEXDIG *(":" 2HEXDIG);
+extmap-attribute    = "extmap:" extension-identifier ["/" direction] SP extension-name [SP extension-attributes];
+extension-identifier= 1*5DIGIT;
+extension-name	    = URI;
+direction	    = "sendonly" / "recvonly" / "sendrecv" / "inactive";
+extension-attributes= byte-string;
 candidate-attribute = "candidate" ":" foundation SP component-id SP
                            transport SP
                            priority SP

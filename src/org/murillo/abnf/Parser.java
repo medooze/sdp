@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Jan 17 00:30:49 CET 2013
+ * Produced : Tue Oct 08 15:39:13 CEST 2013
  *
  * -----------------------------------------------------------------------------
  */
@@ -182,6 +182,14 @@ public class Parser
     else if (rulename.equalsIgnoreCase("attribute-fields")) rule = Rule$attribute_fields.parse(context);
     else if (rulename.equalsIgnoreCase("attribute-field")) rule = Rule$attribute_field.parse(context);
     else if (rulename.equalsIgnoreCase("gen-attribute")) rule = Rule$gen_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("fingerprint-attribute")) rule = Rule$fingerprint_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("hash-func")) rule = Rule$hash_func.parse(context);
+    else if (rulename.equalsIgnoreCase("fingerprint")) rule = Rule$fingerprint.parse(context);
+    else if (rulename.equalsIgnoreCase("extmap-attribute")) rule = Rule$extmap_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("extension-identifier")) rule = Rule$extension_identifier.parse(context);
+    else if (rulename.equalsIgnoreCase("extension-name")) rule = Rule$extension_name.parse(context);
+    else if (rulename.equalsIgnoreCase("direction")) rule = Rule$direction.parse(context);
+    else if (rulename.equalsIgnoreCase("extension-attributes")) rule = Rule$extension_attributes.parse(context);
     else if (rulename.equalsIgnoreCase("candidate-attribute")) rule = Rule$candidate_attribute.parse(context);
     else if (rulename.equalsIgnoreCase("foundation")) rule = Rule$foundation.parse(context);
     else if (rulename.equalsIgnoreCase("component-id")) rule = Rule$component_id.parse(context);

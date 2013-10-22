@@ -1081,4 +1081,44 @@ class Builder implements Visitor {
     public Object visit(Rule$ice_char rule) {
         return visitRules(rule.rules);
     }
+
+    @Override
+    public Object visit(Rule$extmap_attribute rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$extension_identifier rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$extension_name rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$direction rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$extension_attributes rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$fingerprint_attribute rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$hash_func rule) {
+	return visitRules(rule.rules);
+    }
+
+    @Override
+    public Object visit(Rule$fingerprint rule) {
+	return visitRules(rule.rules);
+    }
 }

@@ -238,6 +238,19 @@ public class MediaDescription {
         return null;
     }
 
+    public ArrayList<Attribute> getAttributes(String key) {
+	//Create list
+	ArrayList<Attribute> attrs = new ArrayList<Attribute>();
+        //For each attribute
+        for (Attribute attr : attributes )
+            //Check if the one searhced
+            if (attr.getField().equalsIgnoreCase(key))
+                //Found
+                attrs.add(attr);
+        //Not found
+        return attrs;
+    }
+
     public void addBandwidth(String type, Integer bandwidth) {
         addBandwidth(new Bandwidth(type,bandwidth));
     }
