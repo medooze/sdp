@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Jan 17 00:30:49 CET 2013
+ * Produced : Tue Oct 08 15:39:13 CEST 2013
  *
  * -----------------------------------------------------------------------------
  */
@@ -34,6 +34,14 @@ public interface Visitor
   public Object visit(Rule$attribute_fields rule);
   public Object visit(Rule$attribute_field rule);
   public Object visit(Rule$gen_attribute rule);
+  public Object visit(Rule$fingerprint_attribute rule);
+  public Object visit(Rule$hash_func rule);
+  public Object visit(Rule$fingerprint rule);
+  public Object visit(Rule$extmap_attribute rule);
+  public Object visit(Rule$extension_identifier rule);
+  public Object visit(Rule$extension_name rule);
+  public Object visit(Rule$direction rule);
+  public Object visit(Rule$extension_attributes rule);
   public Object visit(Rule$candidate_attribute rule);
   public Object visit(Rule$foundation rule);
   public Object visit(Rule$component_id rule);

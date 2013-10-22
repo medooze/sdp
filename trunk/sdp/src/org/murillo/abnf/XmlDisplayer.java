@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Thu Jan 17 00:30:49 CET 2013
+ * Produced : Tue Oct 08 15:39:13 CEST 2013
  *
  * -----------------------------------------------------------------------------
  */
@@ -276,6 +276,102 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</gen-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$fingerprint_attribute rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<fingerprint-attribute>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</fingerprint-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$hash_func rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<hash-func>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</hash-func>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$fingerprint rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<fingerprint>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</fingerprint>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extmap_attribute rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extmap-attribute>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extmap-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extension_identifier rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extension-identifier>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extension-identifier>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extension_name rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extension-name>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extension-name>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$direction rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<direction>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</direction>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$extension_attributes rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<extension-attributes>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</extension-attributes>");
     terminal = false;
     return null;
   }
