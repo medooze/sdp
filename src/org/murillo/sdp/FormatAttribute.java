@@ -76,4 +76,10 @@ public class FormatAttribute implements Attribute {
     public void addParameter(String key,Integer val) {
         addParameter(key,val.toString());
     }
+
+    public boolean isEmpty() {
+	return parameters!=null ? parameters.isEmpty() : true;
+    }
+
+
 }
