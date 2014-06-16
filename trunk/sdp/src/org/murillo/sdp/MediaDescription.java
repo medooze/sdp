@@ -269,6 +269,11 @@ public class MediaDescription {
         addAttribute(new BaseAttribute(field,value));
     }
 
+    public void addAttribute(String field, Integer value) {
+        //Add attribute
+        addAttribute(new BaseAttribute(field,value));
+    }
+
     public void addRTPMapAttribute(Integer format, String name, int rate) {
         addAttribute( new RTPMapAttribute(format, name, rate));
     }

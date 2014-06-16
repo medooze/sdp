@@ -266,7 +266,7 @@ public class SessionDescription {
     }
 
     public void addAttribute(String attr) {
-        addAttribute( new BaseAttribute(attr,null));
+        addAttribute( new BaseAttribute(attr));
     }
 
     public void addAttribute(String attr, String value) {

@@ -26,6 +26,11 @@ public class BaseAttribute implements Attribute {
         this.value = value;
     }
 
+    public BaseAttribute(String field, Integer value) {
+        this.field = field;
+        this.value = value.toString();
+    }
+
     @Override
     public String toString() {
         //Get value
@@ -34,6 +39,7 @@ public class BaseAttribute implements Attribute {
         return "a="+ getField() + (value!=null ? ":" + value : "") + "\r\n";
     }
 
+    @Override
     public String getField() {
         return field;
     }
@@ -42,6 +48,7 @@ public class BaseAttribute implements Attribute {
         this.field = field;
     }
 
+    @Override
     public String getValue() {
         return value;
     }
