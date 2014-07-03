@@ -17,10 +17,12 @@ public class SSRCGroupAttribute implements Attribute {
     private ArrayList<String> SSRCIds;
 
     public SSRCGroupAttribute() {
+	SSRCIds = new ArrayList<String>();
     }
 
     public SSRCGroupAttribute(String semantics) {
         this.semantics = semantics;
+	SSRCIds = new ArrayList<String>();
     }
 
     @Override
