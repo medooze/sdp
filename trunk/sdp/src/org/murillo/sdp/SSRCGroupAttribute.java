@@ -6,6 +6,7 @@
 package org.murillo.sdp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -23,6 +24,11 @@ public class SSRCGroupAttribute implements Attribute {
     public SSRCGroupAttribute(String semantics) {
         this.semantics = semantics;
 	SSRCIds = new ArrayList<String>();
+    }
+    
+    public SSRCGroupAttribute(String semantics, List<String> ssrcs) {
+        this.semantics = semantics;
+	this.SSRCIds = new ArrayList<String>(ssrcs);
     }
 
     @Override

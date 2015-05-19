@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Oct 08 15:39:13 CEST 2013
+ * Produced : Mon Mar 23 16:37:55 CET 2015
  *
  * -----------------------------------------------------------------------------
  */
@@ -46,16 +46,16 @@ final public class Rule$h16 extends Rule
           int c1 = 0;
           for (int i1 = 0; i1 < 1 && f1; i1++)
           {
-            rule = Rule$HEXDIG4.parse(context);
+            rule = Rule$HEXDIG.parse(context);
             if ((f1 = rule != null))
             {
               e1.add(rule);
               c1++;
             }
           }
-          for (int i1 = 0; f1; i1++)
+          for (int i1 = 1; i1 < 4 && f1; i1++)
           {
-            rule = Rule$HEXDIG4.parse(context);
+            rule = Rule$HEXDIG.parse(context);
             if ((f1 = rule != null))
             {
               e1.add(rule);

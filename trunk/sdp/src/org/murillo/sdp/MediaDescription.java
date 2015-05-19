@@ -7,6 +7,7 @@ package org.murillo.sdp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
@@ -192,7 +193,7 @@ public class MediaDescription {
         return value;
     }
 
-    public String getFormatParameters(int fmt) {
+    public Map<String,String> getFormatParameters(int fmt) {
         //For each attribute
         for (Attribute attr : attributes ) {
             //Check if it is a format attribute

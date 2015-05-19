@@ -88,11 +88,6 @@ class Builder implements Visitor {
     }
 
     @Override
-    public Object visit(Rule$HEXDIG4 rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
     public Object visit(Rule$ls32 rule) {
         return visitRules(rule.rules);
     }
@@ -459,36 +454,6 @@ class Builder implements Visitor {
 
     @Override
     public Object visit(Rule$FQDN rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
-    public Object visit(Rule$IP4_address rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
-    public Object visit(Rule$b1 rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
-    public Object visit(Rule$IP6_address rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
-    public Object visit(Rule$hexpart rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
-    public Object visit(Rule$hexseq rule) {
-        return visitRules(rule.rules);
-    }
-
-    @Override
-    public Object visit(Rule$hex4 rule) {
         return visitRules(rule.rules);
     }
 

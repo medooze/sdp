@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Oct 08 15:39:13 CEST 2013
+ * Produced : Mon Mar 23 16:37:55 CET 2015
  *
  * -----------------------------------------------------------------------------
  */
@@ -1396,66 +1396,6 @@ public class XmlDisplayer implements Visitor
     return null;
   }
 
-  public Object visit(Rule$IP4_address rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<IP4-address>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</IP4-address>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(Rule$b1 rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<b1>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</b1>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(Rule$IP6_address rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<IP6-address>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</IP6-address>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(Rule$hexpart rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<hexpart>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</hexpart>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(Rule$hexseq rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<hexseq>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</hexseq>");
-    terminal = false;
-    return null;
-  }
-
   public Object visit(Rule$email_safe rule)
   {
     if (!terminal) System.out.println();
@@ -1632,18 +1572,6 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</h16>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(Rule$HEXDIG4 rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<HEXDIG4>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</HEXDIG4>");
     terminal = false;
     return null;
   }
@@ -2448,18 +2376,6 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</word>");
-    terminal = false;
-    return null;
-  }
-
-  public Object visit(Rule$hex4 rule)
-  {
-    if (!terminal) System.out.println();
-    System.out.print("<hex4>");
-    terminal = false;
-    visitRules(rule.rules);
-    if (!terminal) System.out.println();
-    System.out.print("</hex4>");
     terminal = false;
     return null;
   }
