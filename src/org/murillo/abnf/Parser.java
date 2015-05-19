@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Oct 08 15:39:13 CEST 2013
+ * Produced : Mon Mar 23 16:37:55 CET 2015
  *
  * -----------------------------------------------------------------------------
  */
@@ -122,6 +122,7 @@ public class Parser
       {
         System.out.println("visitor error: instantiation failure - " + e.getMessage());
       }
+       System.out.println("done");
     }
   }
 
@@ -275,11 +276,6 @@ public class Parser
     else if (rulename.equalsIgnoreCase("IP6-multicast")) rule = Rule$IP6_multicast.parse(context);
     else if (rulename.equalsIgnoreCase("ttl")) rule = Rule$ttl.parse(context);
     else if (rulename.equalsIgnoreCase("FQDN")) rule = Rule$FQDN.parse(context);
-    else if (rulename.equalsIgnoreCase("IP4-address")) rule = Rule$IP4_address.parse(context);
-    else if (rulename.equalsIgnoreCase("b1")) rule = Rule$b1.parse(context);
-    else if (rulename.equalsIgnoreCase("IP6-address")) rule = Rule$IP6_address.parse(context);
-    else if (rulename.equalsIgnoreCase("hexpart")) rule = Rule$hexpart.parse(context);
-    else if (rulename.equalsIgnoreCase("hexseq")) rule = Rule$hexseq.parse(context);
     else if (rulename.equalsIgnoreCase("email-safe")) rule = Rule$email_safe.parse(context);
     else if (rulename.equalsIgnoreCase("URI")) rule = Rule$URI.parse(context);
     else if (rulename.equalsIgnoreCase("hier-part")) rule = Rule$hier_part.parse(context);
@@ -295,7 +291,6 @@ public class Parser
     else if (rulename.equalsIgnoreCase("IPvFuture")) rule = Rule$IPvFuture.parse(context);
     else if (rulename.equalsIgnoreCase("IPv6address")) rule = Rule$IPv6address.parse(context);
     else if (rulename.equalsIgnoreCase("h16")) rule = Rule$h16.parse(context);
-    else if (rulename.equalsIgnoreCase("HEXDIG4")) rule = Rule$HEXDIG4.parse(context);
     else if (rulename.equalsIgnoreCase("ls32")) rule = Rule$ls32.parse(context);
     else if (rulename.equalsIgnoreCase("IPv4address")) rule = Rule$IPv4address.parse(context);
     else if (rulename.equalsIgnoreCase("dec-octet")) rule = Rule$dec_octet.parse(context);
@@ -363,7 +358,6 @@ public class Parser
     else if (rulename.equalsIgnoreCase("WSP")) rule = Rule$WSP.parse(context);
     else if (rulename.equalsIgnoreCase("atom")) rule = Rule$atom.parse(context);
     else if (rulename.equalsIgnoreCase("word")) rule = Rule$word.parse(context);
-    else if (rulename.equalsIgnoreCase("hex4")) rule = Rule$hex4.parse(context);
     else if (rulename.equalsIgnoreCase("extn-addr")) rule = Rule$extn_addr.parse(context);
     else if (rulename.equalsIgnoreCase("non-ws-string")) rule = Rule$non_ws_string.parse(context);
     else if (rulename.equalsIgnoreCase("byte-string")) rule = Rule$byte_string.parse(context);

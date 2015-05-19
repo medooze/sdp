@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Oct 08 15:39:13 CEST 2013
+ * Produced : Mon Mar 23 16:37:55 CET 2015
  *
  * -----------------------------------------------------------------------------
  */
@@ -590,31 +590,6 @@ public class Displayer implements Visitor
     return visitRules(rule.rules);
   }
 
-  public Object visit(Rule$IP4_address rule)
-  {
-    return visitRules(rule.rules);
-  }
-
-  public Object visit(Rule$b1 rule)
-  {
-    return visitRules(rule.rules);
-  }
-
-  public Object visit(Rule$IP6_address rule)
-  {
-    return visitRules(rule.rules);
-  }
-
-  public Object visit(Rule$hexpart rule)
-  {
-    return visitRules(rule.rules);
-  }
-
-  public Object visit(Rule$hexseq rule)
-  {
-    return visitRules(rule.rules);
-  }
-
   public Object visit(Rule$email_safe rule)
   {
     return visitRules(rule.rules);
@@ -686,11 +661,6 @@ public class Displayer implements Visitor
   }
 
   public Object visit(Rule$h16 rule)
-  {
-    return visitRules(rule.rules);
-  }
-
-  public Object visit(Rule$HEXDIG4 rule)
   {
     return visitRules(rule.rules);
   }
@@ -1026,11 +996,6 @@ public class Displayer implements Visitor
   }
 
   public Object visit(Rule$word rule)
-  {
-    return visitRules(rule.rules);
-  }
-
-  public Object visit(Rule$hex4 rule)
   {
     return visitRules(rule.rules);
   }

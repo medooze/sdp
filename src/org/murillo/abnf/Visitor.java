@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Tue Oct 08 15:39:13 CEST 2013
+ * Produced : Mon Mar 23 16:37:55 CET 2015
  *
  * -----------------------------------------------------------------------------
  */
@@ -127,11 +127,6 @@ public interface Visitor
   public Object visit(Rule$IP6_multicast rule);
   public Object visit(Rule$ttl rule);
   public Object visit(Rule$FQDN rule);
-  public Object visit(Rule$IP4_address rule);
-  public Object visit(Rule$b1 rule);
-  public Object visit(Rule$IP6_address rule);
-  public Object visit(Rule$hexpart rule);
-  public Object visit(Rule$hexseq rule);
   public Object visit(Rule$email_safe rule);
   public Object visit(Rule$URI rule);
   public Object visit(Rule$hier_part rule);
@@ -147,7 +142,6 @@ public interface Visitor
   public Object visit(Rule$IPvFuture rule);
   public Object visit(Rule$IPv6address rule);
   public Object visit(Rule$h16 rule);
-  public Object visit(Rule$HEXDIG4 rule);
   public Object visit(Rule$ls32 rule);
   public Object visit(Rule$IPv4address rule);
   public Object visit(Rule$dec_octet rule);
@@ -215,7 +209,6 @@ public interface Visitor
   public Object visit(Rule$WSP rule);
   public Object visit(Rule$atom rule);
   public Object visit(Rule$word rule);
-  public Object visit(Rule$hex4 rule);
   public Object visit(Rule$extn_addr rule);
   public Object visit(Rule$non_ws_string rule);
   public Object visit(Rule$byte_string rule);
