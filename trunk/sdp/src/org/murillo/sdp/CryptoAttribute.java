@@ -27,6 +27,12 @@ public class CryptoAttribute implements Attribute {
             this.method = method;
             this.info = info;
         }
+	
+	@Override 
+	public
+	KeyParam clone() {
+		return new KeyParam(method, info);
+	}
 
         public String getInfo() {
             return info;
@@ -76,6 +82,19 @@ public class CryptoAttribute implements Attribute {
         this.keyParams = new ArrayList<KeyParam>();
         this.keyParams.add(new KeyParam(method, info));
     }
+    
+    @Override
+    public CryptoAttribute clone() {
+	//Clne key params
+	ArrayList<KeyParam> clonedKeyParams = new ArrayList<KeyParam>();
+	//Add each param
+	for(KeyParam param: keyParams)
+		//Add it
+		clonedKeyParams.add(param.clone());
+	//return the cloenda attr
+	return new CryptoAttribute(tag, suite, clonedKeyParams, sessionParams);
+    }
+  
 
     @Override
     public String getField() {

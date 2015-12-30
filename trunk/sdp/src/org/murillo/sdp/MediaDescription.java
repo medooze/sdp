@@ -48,6 +48,42 @@ public class MediaDescription {
         while(tokenizer.hasMoreTokens())
             this.proto.add(tokenizer.nextToken());
     }
+    
+    public MediaDescription clone() {
+		//Serialize protocol
+		String value = "";
+		boolean first = true;
+		for (String p : proto)
+		{
+		    if (!first)
+			value += "/";
+		    else
+			first = false;
+		    value += p;
+		}
+		//Create new media
+		MediaDescription cloned = new MediaDescription(media, port, value);
+		//For each format
+		for (String format : formats)
+			//Add it
+			cloned.addFormat(format);
+		//For each connection
+		for (Connection connection: connections)
+			//Add it
+			cloned.addConnection(connection.clone());
+		//For each bandwidth
+		for (Bandwidth bandwidth: bandwidths)
+			//Add it
+			cloned.addBandwidth(bandwidth.clone());
+		//For each connection
+		for (Attribute attribute: attributes)
+			//Add it
+			cloned.addAttribute(attribute.clone());
+		
+		//Return cloned one
+		return cloned;
+    }
+	
 
     @Override
     public String toString() {

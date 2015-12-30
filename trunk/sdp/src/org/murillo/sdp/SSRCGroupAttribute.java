@@ -30,6 +30,12 @@ public class SSRCGroupAttribute implements Attribute {
         this.semantics = semantics;
 	this.SSRCIds = new ArrayList<String>(ssrcs);
     }
+    
+    @Override
+    public SSRCGroupAttribute clone() {
+	    return new SSRCGroupAttribute(semantics, SSRCIds);
+    }
+  
 
     @Override
     public String toString() {

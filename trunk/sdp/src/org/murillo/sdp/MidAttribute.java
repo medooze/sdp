@@ -19,6 +19,11 @@ public class MidAttribute implements Attribute {
     public MidAttribute(String identificationTag) {
         this.identificationTag = identificationTag;
     }
+    
+    @Override
+    public MidAttribute clone() {
+	    return new MidAttribute(identificationTag);
+    }  
 
     @Override
     public String toString() {

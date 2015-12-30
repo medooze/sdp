@@ -19,7 +19,24 @@ public class GroupAttribute implements Attribute {
     public GroupAttribute(){
         tags = new ArrayList<String>();
     }
-
+    
+    public GroupAttribute(String semantics){
+	this.semantics = semantics;
+        tags = new ArrayList<String>();
+    }
+    
+    @Override
+    public GroupAttribute clone() {
+	    //Clone
+	    GroupAttribute cloned = new GroupAttribute(semantics);
+	    //Clone data
+	    for(String tag: tags)
+		    //Add tag
+		    cloned.addTag(tag);
+	    //Return it
+	    return cloned;
+    }
+  
     @Override
     public String getField() {
         return "group";

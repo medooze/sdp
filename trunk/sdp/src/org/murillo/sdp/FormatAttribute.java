@@ -34,6 +34,19 @@ public class FormatAttribute implements Attribute {
     }
     
     @Override
+    public FormatAttribute clone() {
+	    //Clone it
+	    FormatAttribute cloned = new FormatAttribute(fmt);
+	    //Add parameters
+	    for (Map.Entry<String,String> parameter : parameters.entrySet())
+		    //Add it to clone
+		    cloned.addParameter(parameter.getKey(), parameter.getValue());
+	    //Return cloned one
+	    return cloned;
+    }
+  
+    
+    @Override
     public String getField() {
         return "fmtp";
     }

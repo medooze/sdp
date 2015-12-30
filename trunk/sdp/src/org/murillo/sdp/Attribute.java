@@ -11,4 +11,5 @@ package org.murillo.sdp;
 public interface Attribute {
     public String getField();
     public String getValue();
+    public Attribute clone();
 }

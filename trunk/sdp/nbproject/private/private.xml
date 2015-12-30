@@ -6,5 +6,6 @@
         <group name="mcuGold"/>
         <group/>
         <group name="mcu"/>
+        <group name="pbx&amp;registrar"/>
     </open-files>
 </project-private>

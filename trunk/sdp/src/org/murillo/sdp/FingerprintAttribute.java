@@ -26,6 +26,12 @@ public class FingerprintAttribute implements Attribute {
 	this.hashFunc = hashFunc;
 	this.fingerprint = fingerprint;
     }
+    
+    @Override
+    public FingerprintAttribute clone() {
+	    return new FingerprintAttribute(hashFunc, fingerprint);
+    }
+  
 
     @Override
     public String getField() {

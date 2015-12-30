@@ -46,7 +46,7 @@ class OriginBuilder extends Builder {
     @Override
     public Object visit(Rule$sess_id rule) {
         //Generate
-        String sessId = rule.toString();
+        Long sessId = Long.parseLong(rule.toString());
         //Set it
         origin.setSessId(sessId);
         //Return it
@@ -56,7 +56,7 @@ class OriginBuilder extends Builder {
     @Override
     public Object visit(Rule$sess_version rule) {
         //Generate
-        String sessVersion = rule.toString();
+        Long sessVersion = Long.parseLong(rule.toString());
         //Sset it
         origin.setSessVersion(sessVersion);
         //Return it

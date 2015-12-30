@@ -61,6 +61,12 @@ public class CandidateAttribute implements Attribute {
         this.type = type;
         extensions = new ArrayList<Extension>();
     }
+    
+    @Override
+    public CandidateAttribute clone() {
+	    return new CandidateAttribute(fundation, componentId, transport, priority, address, port, type);
+    }
+  
 
     @Override
     public String getField() {
