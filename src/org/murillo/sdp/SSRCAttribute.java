@@ -23,6 +23,12 @@ public class SSRCAttribute implements Attribute {
         this.attrField = attrField;
         this.attrValue = attrValue;
     }
+    
+    @Override
+    public SSRCAttribute clone() {
+	    return new SSRCAttribute(SSRC, attrField, attrValue);
+    }
+  
 
     @Override
     public String toString() {

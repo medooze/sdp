@@ -21,6 +21,11 @@ public class Key {
         this.key = key;
     }
 
+    @Override 
+    public Key clone() {
+	    return new Key(type, key);
+    }
+    
     @Override
     public String toString() {
         return "k=" + (key!=null? key + " " : "" ) + type + "\r\n";

@@ -12,8 +12,8 @@ package org.murillo.sdp;
 public class Origin {
     
     private String username;
-    private String sessId;
-    private String sessVersion;
+    private Long sessId;
+    private Long sessVersion;
     private String nettype;
     private String addrtype;
     private String address;
@@ -22,7 +22,7 @@ public class Origin {
 
     }
 
-    public Origin(String username, String sessId, String sessVersion, String nettype, String addrtype, String address) {
+    public Origin(String username, Long sessId, Long sessVersion, String nettype, String addrtype, String address) {
         this.username = username;
         this.sessId = sessId;
         this.sessVersion = sessVersion;
@@ -31,6 +31,11 @@ public class Origin {
         this.address = address;
     }
 
+    @Override
+    public Origin clone() {
+	    return new Origin(username, sessId, sessVersion, nettype, addrtype, address);
+    }
+    
     @Override
     public String toString() {
         return "o=" + username + " " + sessId + " " + sessVersion + " " + nettype + " " + addrtype + " " + address + "\r\n";
@@ -61,19 +66,23 @@ public class Origin {
         this.nettype = nettype;
     }
 
-    public String getSessId() {
+    public Long getSessId() {
         return sessId;
     }
 
-    public void setSessId(String sessId) {
+    public void setSessId(Long sessId) {
         this.sessId = sessId;
     }
+    
+    public void setSessId(Integer sessId) {
+        this.sessId = sessId.longValue();
+    }
 
-    public String getSessVersion() {
+    public Long getSessVersion() {
         return sessVersion;
     }
 
-    public void setSessVersion(String sessVersion) {
+    public void setSessVersion(Long sessVersion) {
         this.sessVersion = sessVersion;
     }
 

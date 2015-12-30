@@ -17,8 +17,6 @@ public class Bandwidth {
     public Bandwidth() {
     }
 
-
-
     @Override
     public String toString() {
         return "b=" +  type + ":" + bandwidth + "\r\n";
@@ -33,6 +31,13 @@ public class Bandwidth {
         this.type = type;
         this.bandwidth = bandwidth.toString();
     }
+    
+    @Override
+    public Bandwidth clone() {
+	    //Return cloned one
+	    return new Bandwidth(type, bandwidth);
+    }
+
 
     public String getBandwidth() {
         return bandwidth;

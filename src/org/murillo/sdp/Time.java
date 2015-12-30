@@ -22,6 +22,11 @@ public class Time {
         this.start = start;
         this.stop = stop;
     }
+    
+    @Override
+    public Time clone() {
+	    return new Time(start,stop);
+    }
 
     @Override
     public String toString() {

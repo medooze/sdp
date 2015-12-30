@@ -31,7 +31,12 @@ public class RTPMapAttribute implements Attribute {
         this.name = name;
         this.rate = rate;
     }
-
+    
+    @Override
+    public RTPMapAttribute clone() {
+	 return new RTPMapAttribute(format, name, rate, parameters);
+    }
+    
     @Override
     public String getField() {
         return "rtpmap";

@@ -25,6 +25,11 @@ public class Connection {
     }
 
     @Override
+    public Connection clone() {
+	    return new Connection(netType, addrType, address);
+    }
+    
+    @Override
     public String toString() {
         return "c=" + netType + " " + addrType + " " + address + "\r\n";
     }

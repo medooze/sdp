@@ -32,6 +32,11 @@ public class BaseAttribute implements Attribute {
     }
 
     @Override
+    public BaseAttribute clone() {
+	    return new BaseAttribute(field, value);
+    }
+     
+    @Override
     public String toString() {
         //Get value
         String value = getValue();

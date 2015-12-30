@@ -22,6 +22,10 @@ public class SessionDescription {
         return Parse(new String(body));
     }
     
+    static public SessionDescription Clone(SessionDescription sdp) {
+	return sdp.clone();
+    }
+    
     static public SessionDescription Parse(String string) throws IllegalArgumentException, ParserException
     {
        ParserContext context = new ParserContext(string, false);
@@ -91,7 +95,52 @@ public class SessionDescription {
         times = new ArrayList<Time>();
         medias = new ArrayList<MediaDescription>();
     }
+    
+    public String getA() {return "a";}
 
+    @Override
+    public SessionDescription clone() {
+	//Create clone
+	SessionDescription cloned = new SessionDescription();
+	//Clone data
+	cloned.setVersion(version);
+	if (origin!=null)	cloned.setOrigin(origin.clone());
+	if (sessionName!=null)	cloned.setSessionName(sessionName.clone());
+	if (information!=null)	cloned.setInformation(information.clone());
+	if (connection!=null)	cloned.setConnection(connection.clone());
+	if (key!=null)		cloned.setKey(key.clone());
+	//For each email
+	for (String email: emails)
+	    //Add it
+	    cloned.addEmail(email);
+	//For each phone
+	for (String phone: phones)
+	    //Add it
+	    cloned.addPhone(phone);
+	//For each bandwidth
+	for (Bandwidth bandwidth: bandwidths)
+		//Add it
+		cloned.addBandwidth(bandwidth.clone());
+	//For each connection
+	for (Attribute attribute: attributes)
+		//Add it
+		cloned.addAttribute(attribute.clone());
+	//For each connection
+	for (Attribute attribute: attributes)
+		//Add it
+		cloned.addAttribute(attribute.clone());
+	//For each time
+	for (Time time: times)
+		//Add it
+		cloned.addTime(time.clone());
+	//For each media
+	for (MediaDescription media: medias)
+		//Add it
+		cloned.addMedia(media.clone());
+	//return it
+	return cloned;
+    }
+    
     @Override
     public String toString() {
         String sdp = "v="+version+"\r\n";
@@ -253,8 +302,16 @@ public class SessionDescription {
         return bandwidths;
     }
 
-    public void setOrigin(String username, String sessId, String sessVersion, String nettype, String addrtype, String address) {
+    public void setOrigin(String username, Long sessId, Long sessVersion, String nettype, String addrtype, String address) {
         setOrigin(new Origin(username, sessId, sessVersion, nettype, addrtype, address));
+    }
+    
+    public void setOrigin(String username, Integer sessId, Long sessVersion, String nettype, String addrtype, String address) {
+        setOrigin(new Origin(username, sessId.longValue(), sessVersion, nettype, addrtype, address));
+    }
+    
+    public void setOrigin(String username, Integer sessId, Integer sessVersion, String nettype, String addrtype, String address) {
+        setOrigin(new Origin(username, sessId.longValue(), sessVersion.longValue(), nettype, addrtype, address));
     }
 
     public void setConnection(String netType, String addrType, String address) {
@@ -273,5 +330,20 @@ public class SessionDescription {
         addAttribute( new BaseAttribute(attr,value));
     }
 
+  static public void main(String[] args)
+  {
+	  SessionDescription sdp = new SessionDescription();
+	  Origin origin = new Origin("-", 0L, 0L, "IN", "IP4", "127.0.0.1");
+	  sdp.setOrigin(origin);
+	  sdp.setSessionName("test");
+	  sdp.addMedia(new MediaDescription("aduio", 0, "UDP/AVP"));
+	  SessionDescription cloned = sdp.clone();
+	  System.out.println(sdp.toString());
+	  System.out.println(cloned.toString());
+	  
+	  origin.setSessId(1);
+	  System.out.println(sdp.toString());
+	  System.out.println(cloned.toString());
+  }
 }
 

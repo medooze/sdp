@@ -29,6 +29,12 @@ public class ExtMapAttribute implements Attribute {
 	this.name = name;
 	this.attributes = attributes;
     }
+    
+    @Override
+    public ExtMapAttribute clone() {
+	    return new ExtMapAttribute(id, direction, name, attributes);
+    }
+  
 
     @Override
     public String getField() {

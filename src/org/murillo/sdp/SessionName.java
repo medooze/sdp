@@ -19,6 +19,11 @@ public class SessionName {
     public SessionName(String name) {
         this.name = name;
     }
+    
+    @Override
+    public SessionName clone() {
+	    return new SessionName(name);
+    }
 
     @Override
     public String toString() {

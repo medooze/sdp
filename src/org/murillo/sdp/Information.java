@@ -21,6 +21,11 @@ public class Information {
     }
 
     @Override
+    public Information clone() {
+	    return new Information(text);
+    }
+	 
+    @Override
     public String toString() {
         return "i=" + text + "\r\n";
     }

@@ -11,15 +11,20 @@ package org.murillo.sdp;
  */
 public class CNameAttribute implements Attribute {
 
-    private String CName;
+    private String cname;
 
     public CNameAttribute() {
     }
 
-    public CNameAttribute(String CName) {
-        this.CName = CName;
+    public CNameAttribute(String cname) {
+        this.cname = cname;
     }
 
+    @Override
+    public CNameAttribute clone() {
+	    return new CNameAttribute(cname);
+    }
+    
     @Override
     public String toString() {
         //Get value
@@ -35,15 +40,15 @@ public class CNameAttribute implements Attribute {
 
     @Override
     public String getValue() {
-        return CName;
+        return cname;
     }
 
     public String getCName() {
-        return CName;
+        return cname;
     }
 
     public void setCName(String CName) {
-        this.CName = CName;
+        this.cname = CName;
     }
 
 }

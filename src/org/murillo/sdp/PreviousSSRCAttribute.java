@@ -18,7 +18,19 @@ public class PreviousSSRCAttribute implements Attribute {
     public PreviousSSRCAttribute() {
         SSRCs = new ArrayList<String>();
     }
-
+    
+    @Override
+    public PreviousSSRCAttribute clone() {
+	    //Clone
+	    PreviousSSRCAttribute cloned =  new PreviousSSRCAttribute();
+	    //For each ssrc
+	    for(String ssrc : SSRCs)
+		    //Add it
+		    cloned.addSSRC(ssrc);
+	    //REturn cloned
+	    return cloned;
+    }
+  
     @Override
     public String toString() {
         //Get value
