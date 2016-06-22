@@ -281,6 +281,14 @@ public class SessionDescription {
     public void addPhone(String email) {
         emails.add(email);
     }
+    
+    public void addBandwidth(String type, Integer bandwidth) {
+        addBandwidth(new Bandwidth(type,bandwidth));
+    }
+
+    public void addBandwidth(String type, String bandwidth) {
+        addBandwidth(new Bandwidth(type,bandwidth));
+    }
 
     public void addBandwidth(Bandwidth bandwith) {
         bandwidths.add(bandwith);
