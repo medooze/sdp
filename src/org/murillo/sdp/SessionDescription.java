@@ -8,7 +8,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Stack;
 import org.murillo.abnf.ParserContext;
-import org.murillo.abnf.ParserException;
 import org.murillo.abnf.Rule$session_description;
 import org.murillo.sdp.impl.SessionDescriptionBuilder;
 /**
