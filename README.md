@@ -1,6 +1,11 @@
 # ABNF Java SDP library
 This java library allows strict [ABNF](https://raw.githubusercontent.com/medooze/sdp/master/src/org/murillo/abnf/sdp.abnf) SDP parsing and serialization
 
+# Build
+```
+ant
+```
+
 # Javadoc
 
 https://medooze.github.io/sdp/ 
