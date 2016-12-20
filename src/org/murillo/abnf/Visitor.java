@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Mar 23 16:37:55 CET 2015
+ * Produced : Tue Dec 20 14:31:45 CET 2016
  *
  * -----------------------------------------------------------------------------
  */
@@ -34,6 +34,10 @@ public interface Visitor
   public Object visit(Rule$attribute_fields rule);
   public Object visit(Rule$attribute_field rule);
   public Object visit(Rule$gen_attribute rule);
+  public Object visit(Rule$sctpmap_attr rule);
+  public Object visit(Rule$sctpmap_number rule);
+  public Object visit(Rule$app rule);
+  public Object visit(Rule$streams rule);
   public Object visit(Rule$fingerprint_attribute rule);
   public Object visit(Rule$hash_func rule);
   public Object visit(Rule$fingerprint rule);
@@ -218,6 +222,7 @@ public interface Visitor
   public Object visit(Rule$DIGIT rule);
   public Object visit(Rule$POS_DIGIT rule);
   public Object visit(Rule$DQUOTE rule);
+  public Object visit(Rule$EQUALS rule);
   public Object visit(org.murillo.abnf.precomp.Token rule);
   public Object visit(org.murillo.abnf.precomp.ByteString rule);
   public Object visit(org.murillo.abnf.precomp.CRLF rule);

@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Mar 23 16:37:55 CET 2015
+ * Produced : Tue Dec 20 14:31:45 CET 2016
  *
  * -----------------------------------------------------------------------------
  */
@@ -122,7 +122,6 @@ public class Parser
       {
         System.out.println("visitor error: instantiation failure - " + e.getMessage());
       }
-       System.out.println("done");
     }
   }
 
@@ -183,6 +182,10 @@ public class Parser
     else if (rulename.equalsIgnoreCase("attribute-fields")) rule = Rule$attribute_fields.parse(context);
     else if (rulename.equalsIgnoreCase("attribute-field")) rule = Rule$attribute_field.parse(context);
     else if (rulename.equalsIgnoreCase("gen-attribute")) rule = Rule$gen_attribute.parse(context);
+    else if (rulename.equalsIgnoreCase("sctpmap-attr")) rule = Rule$sctpmap_attr.parse(context);
+    else if (rulename.equalsIgnoreCase("sctpmap-number")) rule = Rule$sctpmap_number.parse(context);
+    else if (rulename.equalsIgnoreCase("app")) rule = Rule$app.parse(context);
+    else if (rulename.equalsIgnoreCase("streams")) rule = Rule$streams.parse(context);
     else if (rulename.equalsIgnoreCase("fingerprint-attribute")) rule = Rule$fingerprint_attribute.parse(context);
     else if (rulename.equalsIgnoreCase("hash-func")) rule = Rule$hash_func.parse(context);
     else if (rulename.equalsIgnoreCase("fingerprint")) rule = Rule$fingerprint.parse(context);
@@ -367,6 +370,7 @@ public class Parser
     else if (rulename.equalsIgnoreCase("DIGIT")) rule = Rule$DIGIT.parse(context);
     else if (rulename.equalsIgnoreCase("POS-DIGIT")) rule = Rule$POS_DIGIT.parse(context);
     else if (rulename.equalsIgnoreCase("DQUOTE")) rule = Rule$DQUOTE.parse(context);
+    else if (rulename.equalsIgnoreCase("EQUALS")) rule = Rule$EQUALS.parse(context);
     else throw new IllegalArgumentException("unknown rule");
 
     if (rule == null)

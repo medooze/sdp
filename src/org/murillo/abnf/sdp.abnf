@@ -32,7 +32,11 @@ zone-adjustments    = %x7a "="  *(SP time SP ["-"] typed-time) CRLF;
 key-field           = %x6b "=" key-type CRLF;
 attribute-fields    = *(attribute-field);
 attribute-field	    = %x61 "="  gen-attribute CRLF;
-gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr / crypto-attribute / candidate-attribute / extmap-attribute / fingerprint-attribute / attribute;
+gen-attribute       = mid-attr / group-attr / ssrc-attr / ssrc-group-attr / cname-attr/ previous-ssrc-attr / rtpmap-attr / fmtp-attr / crypto-attribute / candidate-attribute / extmap-attribute / fingerprint-attribute / sctpmap-attr / attribute;
+sctpmap-attr        =  "sctpmap:" sctpmap-number SP app SP [streams];
+sctpmap-number      =  1*DIGIT;
+app                 =  token;
+streams             =  1*DIGIT;
 fingerprint-attribute  =  "fingerprint" ":" hash-func SP fingerprint;
 hash-func           = "sha-1" / "sha-224" / "sha-256" / "sha-384" / "sha-512" / "md5" / "md2" / token ;
 fingerprint         = 2HEXDIG *(":" 2HEXDIG);
@@ -250,3 +254,4 @@ ALPHA               = $rule("org.murillo.abnf.precomp.ALPHA") 		; # %x41-5A / %x
 DIGIT               = %x30-39;
 POS-DIGIT           = %x31-39;
 DQUOTE              = %x22;
+EQUALS              = "=";

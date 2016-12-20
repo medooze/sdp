@@ -19,6 +19,7 @@ import org.murillo.abnf.Rule$crypto_attribute;
 import org.murillo.abnf.Rule$candidate_attribute;
 import org.murillo.abnf.Rule$extmap_attribute;
 import org.murillo.abnf.Rule$fingerprint_attribute;
+import org.murillo.abnf.Rule$sctpmap_attr;
 import org.murillo.sdp.Attribute;
 import org.murillo.sdp.BaseAttribute;
 import org.murillo.sdp.CNameAttribute;
@@ -33,6 +34,7 @@ import org.murillo.sdp.SSRCAttribute;
 import org.murillo.sdp.SSRCGroupAttribute;
 import org.murillo.sdp.ExtMapAttribute;
 import org.murillo.sdp.FingerprintAttribute;
+import org.murillo.sdp.SCTPMapAttribute;
 
 
 /**
@@ -179,6 +181,16 @@ class AttributeBuilder extends Builder {
         FingerprintAttributeBuilder builder = new FingerprintAttributeBuilder();
         //build it
         attr = (FingerprintAttribute)builder.visit(rule);
+        //Return it
+        return attr;
+    }
+    
+    @Override
+    public Object visit(Rule$sctpmap_attr rule) {
+	//Get builder
+        SCTPMapAttributeBuilder builder = new SCTPMapAttributeBuilder();
+        //build it
+        attr = (SCTPMapAttribute)builder.visit(rule);
         //Return it
         return attr;
     }

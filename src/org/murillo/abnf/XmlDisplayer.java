@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  *
  * Producer : com.parse2.aparse.Parser 2.2
- * Produced : Mon Mar 23 16:37:55 CET 2015
+ * Produced : Tue Dec 20 14:31:45 CET 2016
  *
  * -----------------------------------------------------------------------------
  */
@@ -276,6 +276,54 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</gen-attribute>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$sctpmap_attr rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<sctpmap-attr>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</sctpmap-attr>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$sctpmap_number rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<sctpmap-number>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</sctpmap-number>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$app rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<app>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</app>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$streams rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<streams>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</streams>");
     terminal = false;
     return null;
   }
@@ -2484,6 +2532,18 @@ public class XmlDisplayer implements Visitor
     visitRules(rule.rules);
     if (!terminal) System.out.println();
     System.out.print("</DQUOTE>");
+    terminal = false;
+    return null;
+  }
+
+  public Object visit(Rule$EQUALS rule)
+  {
+    if (!terminal) System.out.println();
+    System.out.print("<EQUALS>");
+    terminal = false;
+    visitRules(rule.rules);
+    if (!terminal) System.out.println();
+    System.out.print("</EQUALS>");
     terminal = false;
     return null;
   }

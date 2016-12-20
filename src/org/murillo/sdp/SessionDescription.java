@@ -7,6 +7,8 @@ package org.murillo.sdp;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.murillo.abnf.ParserContext;
 import org.murillo.abnf.Rule$session_description;
 import org.murillo.sdp.impl.SessionDescriptionBuilder;
@@ -351,6 +353,24 @@ public class SessionDescription {
 	  origin.setSessId(1);
 	  System.out.println(sdp.toString());
 	  System.out.println(cloned.toString());
+	  
+	    try {
+		    sdp = SessionDescription.Parse("v=0\r\n" +
+			"o=- 3803220250780278427 2 IN IP4 127.0.0.1\r\n" +
+			"s=-\r\n" +
+			"t=0 0\r\n" +
+			"a=msid-semantic: WMS\r\n" +
+			"m=application 50895 DTLS/SCTP 5000\r\n" +
+			"a=sctpmap:5000 webrtc-datachannel 1024\r\n");
+		    
+		    MediaDescription datachannel = sdp.getMedias().get(0);
+		    SCTPMapAttribute sctpmap = (SCTPMapAttribute)datachannel.getAttributes("sctpmap").get(0);
+		    System.out.println(sctpmap.toString());
+	    } catch (IllegalArgumentException ex) {
+		    Logger.getLogger(SessionDescription.class.getName()).log(Level.SEVERE, null, ex);
+	    } catch (ParserException ex) {
+		    Logger.getLogger(SessionDescription.class.getName()).log(Level.SEVERE, null, ex);
+	    }
   }
 }
 
