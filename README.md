@@ -26,6 +26,20 @@ https://medooze.github.io/sdp/
 	  System.out.println(sdp.toString());
 	  System.out.println(cloned.toString());
 ```
+
+``` java
+ SessionDescription sdp = SessionDescription.Parse("v=0\r\n" +
+	"o=- 3803220250780278427 2 IN IP4 127.0.0.1\r\n" +
+	"s=-\r\n" +
+	"t=0 0\r\n" +
+	"a=msid-semantic: WMS\r\n" +
+	"m=application 50895 DTLS/SCTP 5000\r\n" +
+	"a=sctpmap:5000 webrtc-datachannel 1024\r\n");
+		    
+  MediaDescription datachannel = sdp.getMedias().get(0);
+  SCTPMapAttribute sctpmap = (SCTPMapAttribute)datachannel.getAttributes("sctpmap").get(0);
+  System.out.println(sctpmap.toString());
+```
 # License
 
 MIT :)
