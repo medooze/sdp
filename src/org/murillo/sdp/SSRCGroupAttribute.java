@@ -15,20 +15,20 @@ import java.util.List;
 public class SSRCGroupAttribute implements Attribute {
 
     private String semantics;
-    private ArrayList<String> SSRCIds;
+    private ArrayList<Long> SSRCIds;
 
     public SSRCGroupAttribute() {
-	SSRCIds = new ArrayList<String>();
+	SSRCIds = new ArrayList<Long>();
     }
 
     public SSRCGroupAttribute(String semantics) {
         this.semantics = semantics;
-	SSRCIds = new ArrayList<String>();
+	SSRCIds = new ArrayList<Long>();
     }
     
-    public SSRCGroupAttribute(String semantics, List<String> ssrcs) {
+    public SSRCGroupAttribute(String semantics, List<Long> ssrcs) {
         this.semantics = semantics;
-	this.SSRCIds = new ArrayList<String>(ssrcs);
+	this.SSRCIds = new ArrayList<Long>(ssrcs);
     }
     
     @Override
@@ -53,20 +53,20 @@ public class SSRCGroupAttribute implements Attribute {
     @Override
     public String getValue() {
         String value = semantics;
-        for (String id : SSRCIds)
+        for (Long id : SSRCIds)
             value += " " + id;
         return value;
     }
 
-    public ArrayList<String> getSSRCIds() {
+    public ArrayList<Long> getSSRCIds() {
         return SSRCIds;
     }
 
-    public void setSSRCIds(ArrayList<String> SSRCIds) {
+    public void setSSRCIds(ArrayList<Long> SSRCIds) {
         this.SSRCIds = SSRCIds;
     }
     
-   public void addSSRCId(String ssrcId) {
+   public void addSSRCId(Long ssrcId) {
        SSRCIds.add(ssrcId);
    }
 

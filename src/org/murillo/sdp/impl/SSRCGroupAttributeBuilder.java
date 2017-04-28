@@ -30,12 +30,12 @@ class SSRCGroupAttributeBuilder extends Builder {
 
     @Override
     public Object visit(Rule$ssrc_id rule) {
-        //Get type
-        String id = rule.toString();
+         //Get type
+        Long ssrcId = Long.parseLong(rule.toString());
         //Set type
-        group.addSSRCId(id);
+        group.addSSRCId(ssrcId);
         //Return it
-        return id;
+        return ssrcId;
     }
     @Override
     public Object visit(Rule$ssrc_group_semantics rule) {
